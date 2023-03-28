@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  width: 100vw;
+}
+
+.user-input {
+  width: 100%;
+}
+
+.my_head {
+  display: flex;
+}
+
+.fa-rotate {
+  margin-left: auto;
+  margin-top: 1.6rem;
+  margin-right: 0.7rem;
+}
+
+.remover {
+  display: none;
+}
+
+.header_one {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.txtTitle {
+  border: none;
+  font-size: 1.2rem;
+  font-style: italic;
+  display: flex;
+  width: 80%;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0.7rem;
+  border-top: 1px solid rgb(187, 180, 171);
+}
+
+.addBook {
+  margin-left: auto;
+}
+
+.fa-arrow-left {
+  color: rgb(187, 180, 171);
+}
+
+.newBook {
+  display: flex;
+}
+
+.books-list {
+  width: 100%;
+}
+
+.ausomFont {
+  display: flex;
+  margin-left: auto;
+}
+
+/* #trash {
+  transform: translateY(-1000rem);
+} */
+
+.diactivate {
+  position: relative;
+  transform: translateY(-1000rem);
+}
+
+.active {
+  position: relative;
+  transform: translateY(0);
+}
+
+.recycle {
+  position: relative;
+  transform: translateY(-10000rem);
+}
+
+.tasks {
+  font-weight: lighter;
+  margin-left: 0.7rem;
+  text-decoration: none;
+  width: 25rem;
+}
+
+.tasks :active {
+  font-weight: lighter;
+  margin-left: 0.7rem;
+  text-decoration: none;
+  width: 25rem;
+  border: 2px solid red;
+}
+
+.check_active {
+  text-decoration-line: line-through;
+  font-weight: lighter;
+}
+
+.check:checked + .tasks {
+  text-decoration-line: line-through;
+  font-weight: lighter;
+}
+
+.clear {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding-left: 37%;
+  border-bottom: 1px solid rgb(187, 180, 171);
+}
+
+.clear a:hover {
+  text-decoration: underline;
+}
