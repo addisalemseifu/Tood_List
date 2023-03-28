@@ -1,5 +1,5 @@
 # Tood_List
-> This is the first part of Todo Lis project configured with modules and all Es6 sintaxes amd webpack.
+> This is the secound part of Todo Lis project configured with modules and all Es6 sintaxes amd webpack.
 <a name="readme-top"></a>
 
 <div align="center">
