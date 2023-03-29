@@ -66,4 +66,14 @@ export default class UI {
   static clearFields = () => {
     document.querySelector('#txtTitle').value = '';
   }
+
+  static clearDone = () => {
+    const checked = document.getElementsByClassName('check');
+    Array.from(checked).forEach((box) => {
+      // eslint-disable-next-line eqeqeq
+      if (box.checked == 1) {
+        box.parentElement.remove();
+      }
+    });
+  }
 }
