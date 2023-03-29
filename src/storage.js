@@ -48,4 +48,28 @@ export default class Store {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     });
   }
+
+  static markDone = (target) => {
+    const tasks = Store.getTask();
+    if (target.checked === true) {
+      // eslint-disable-next-line arrow-body-style
+      const matching = tasks.find((task) => {
+        // eslint-disable-next-line eqeqeq
+        return task.index == target.parentElement.firstChild.id;
+      });
+      const indexOfMatch = tasks.indexOf(matching);
+      tasks[indexOfMatch].completed = true;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }
+
+  static removeDone() {
+    let tasks = Store.getTask();
+    // eslint-disable-next-line arrow-body-style
+    const tasksUfinished = tasks.filter((item) => {
+      return item.completed === false;
+    });
+    tasks = tasksUfinished;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
 }

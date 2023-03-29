@@ -33,9 +33,13 @@ document.querySelector('.addBook').addEventListener('click', (e) => {
 });
 // Event: Remove a Book
 document.querySelector('.books-list').addEventListener('click', (e) => {
-  // Eddit task
+  // Eddit task.
   if (e.target.classList.contains('tasks')) {
     Store.update(e.target);
+  }
+  // Check task done.
+  if (e.target.classList.contains('check')) {
+    Store.markDone(e.target);
   }
   // Remove Task from UI
   UI.deleteTask(e.target);
