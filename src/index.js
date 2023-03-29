@@ -1,13 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import _ from 'lodash';
+import _, { concat } from 'lodash';
 import './index.css';
 import UI from './ui.js';
 import Todolist from './task.js';
 import Store from './storage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Store.update();
   UI.displayTask();
-  // UI.pageStyler();
 });
 
 // Event: Add a Task
@@ -33,6 +33,10 @@ document.querySelector('.addBook').addEventListener('click', (e) => {
 });
 // Event: Remove a Book
 document.querySelector('.books-list').addEventListener('click', (e) => {
+  // Eddit task
+  if (e.target.classList.contains('tasks')) {
+    Store.update(e.target);
+  }
   // Remove Task from UI
   UI.deleteTask(e.target);
   // Make input editable

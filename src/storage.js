@@ -33,4 +33,19 @@ export default class Store {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }
+
+  static update = (target) => {
+    target.removeAttribute('readonly');
+    target.addEventListener('input', () => {
+      const tasks = Store.getTask();
+      // eslint-disable-next-line arrow-body-style
+      const matching = tasks.find((task) => {
+        // eslint-disable-next-line eqeqeq
+        return task.index == target.parentElement.firstChild.id;
+      });
+      const indexOfMatch = tasks.indexOf(matching);
+      tasks[indexOfMatch].task = target.value;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    });
+  }
 }

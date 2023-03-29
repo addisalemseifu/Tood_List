@@ -14,7 +14,7 @@ export default class UI {
     // newBook.id.ad()
     const booksList = document.querySelector('.books-list');
     newBook.innerHTML = `<input type="checkbox" class="check" id=${task.index}>
-    <h2 contenteditable="true" class="tasks">${task.task}</h2>
+    <input type="text" value="${task.task}" class="tasks" readonly></input>
     
     <div class="ausomFont" >
       <i class="fa-solid fa-ellipsis-vertical"></i>
