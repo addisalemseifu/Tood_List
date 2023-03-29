@@ -22,13 +22,11 @@
 }
 
 .fa-rotate {
+  cursor: pointer;
   margin-left: auto;
-  margin-top: 1.6rem;
-  margin-right: 0.7rem;
-}
-
-.remover {
-  display: none;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  color: rgb(187, 180, 171);
 }
 
 .header_one {
@@ -57,10 +55,38 @@
 
 .fa-arrow-left {
   color: rgb(187, 180, 171);
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 .newBook {
   display: flex;
+}
+
+.book_active {
+  background-color: rgb(232, 142, 142);
+}
+
+.fa-trash-can {
+  position: relative;
+  transform: translateY(-1000rem);
+}
+
+.trash_active {
+  cursor: pointer;
+  transform: translateY(0);
+  margin-right: 0.5rem;
+}
+
+.fa-ellipsis-vertical {
+  cursor: pointer;
+  position: relative;
+  transform: translateY(0);
+  color: rgb(187, 180, 171);
+}
+
+.drop_deactive {
+  transform: translateY(-1000rem);
 }
 
 .books-list {
@@ -103,7 +129,6 @@
   margin-left: 0.7rem;
   text-decoration: none;
   width: 25rem;
-  border: 2px solid red;
 }
 
 .check_active {
@@ -122,8 +147,4 @@
   font-weight: lighter;
   padding-left: 37%;
   border-bottom: 1px solid rgb(187, 180, 171);
-}
-
-.clear a:hover {
-  text-decoration: underline;
 }
