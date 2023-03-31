@@ -50,7 +50,7 @@ This is the secound part of Todo Lis project configured with modules and all Es6
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [https://addisalemseifu.github.io/Tood_List/]()
+- [https://addisalemseifu.github.io/Tood_List]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
