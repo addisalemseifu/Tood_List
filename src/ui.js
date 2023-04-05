@@ -11,7 +11,6 @@ export default class UI {
   static addTaskToList = (task) => {
     const newBook = document.createElement('div');
     newBook.classList.add('newBook', 'inputs');
-    // newBook.id.ad()
     const booksList = document.querySelector('.books-list');
     newBook.innerHTML = `<input type="checkbox" class="check" id=${task.index}>
     <input type="text" value="${task.task}" class="tasks" readonly></input>
@@ -23,9 +22,20 @@ export default class UI {
     booksList.appendChild(newBook);
   }
 
-  static deleteTask = (el) => {
-    if (el.classList.contains('remover')) {
-      el.parentElement.parentElement.remove();
+  static deleteTask = (ie) => {
+    const check = document.querySelectorAll('.newBook');
+    for (let i = 0; i < check.length; i += 1) {
+      // eslint-disable-next-line eqeqeq
+      if (check[i].firstChild.id == ie) {
+        check[i].remove();
+      }
+    }
+    if (check.length > 0) {
+      let indexer = 1;
+      Array.from(check).forEach((elem) => {
+        elem.firstChild.id = indexer;
+        indexer += 1;
+      });
     }
   }
 
@@ -35,7 +45,6 @@ export default class UI {
     const drop_down = document.getElementsByClassName('fa-ellipsis-vertical');
     const trash = document.getElementsByClassName('fa-trash-can');
     Array.from(tasks).forEach((tas) => {
-      // tas.style.background = 'white'
       if (tas.classList.contains('book_active')) {
         tas.classList.remove('book_active');
       }
@@ -44,7 +53,6 @@ export default class UI {
       target.classList.add('book_active');
     }
     Array.from(trash).forEach((tr) => {
-      // tas.style.background = 'white'
       if (tr.classList.contains('trash_active')) {
         tr.classList.remove('trash_active');
       }
@@ -53,7 +61,6 @@ export default class UI {
       target.lastElementChild.lastElementChild.classList.add('trash_active');
     }
     Array.from(drop_down).forEach((dr) => {
-      // tas.style.background = 'white'
       if (dr.classList.contains('drop_deactive')) {
         dr.classList.remove('drop_deactive');
       }

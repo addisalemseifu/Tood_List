@@ -31,7 +31,7 @@ document.querySelector('.addBook').addEventListener('click', (e) => {
   // Clear fiels
   UI.clearFields();
 });
-// Event: Remove a Book
+// Event: Remove a Task
 document.querySelector('.books-list').addEventListener('click', (e) => {
   // Eddit task.
   if (e.target.classList.contains('tasks')) {
@@ -39,14 +39,21 @@ document.querySelector('.books-list').addEventListener('click', (e) => {
   }
   // Check task done.
   if (e.target.classList.contains('check')) {
-    Store.markDone(e.target);
+    const ide = e.target.parentElement.firstChild.id;
+    Store.markDone(ide, e.target);
   }
   // Remove Task from UI
-  UI.deleteTask(e.target);
+  if (e.target.classList.contains('remover')) {
+    const ide = e.target.parentElement.parentElement.firstChild.id;
+    UI.deleteTask(ide);
+  }
   // Make input editable
   UI.editable(e.target);
   // Remove book from store
-  Store.removeTask(e.target);
+  if (e.target.classList.contains('remover')) {
+    const ide = e.target.parentElement.parentElement.firstChild.id;
+    Store.removeTask(ide);
+  }
 });
 
 document.querySelector('.clear').addEventListener('click', () => {
