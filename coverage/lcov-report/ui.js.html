@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.76% </span>
+                <span class="strong">44.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/47</span>
+                <span class='fraction'>21/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>3/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.04% </span>
+                <span class="strong">43.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/46</span>
+                <span class='fraction'>20/46</span>
             </div>
         
             
@@ -159,32 +159,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,33 +243,33 @@ export default class UI {
     });
   }
 &nbsp;
-  static addTaskToList = <span class="fstat-no" title="function not covered" >(t</span>ask) =&gt; {
-    const newBook = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
-<span class="cstat-no" title="statement not covered" >    newBook.classList.add('newBook', 'inputs');</span>
-    const booksList = <span class="cstat-no" title="statement not covered" >document.querySelector('.books-list');</span>
-<span class="cstat-no" title="statement not covered" >    newBook.innerHTML = `&lt;input type="checkbox" class="check" id=${task.index}&gt;</span>
+  static addTaskToList = (task) =&gt; {
+    const newBook = document.createElement('div');
+    newBook.classList.add('newBook', 'inputs');
+    const booksList = document.querySelector('.books-list');
+    newBook.innerHTML = `&lt;input type="checkbox" class="check" id=${task.index}&gt;
     &lt;input type="text" value="${task.task}" class="tasks" readonly&gt;&lt;/input&gt;
     
     &lt;div class="ausomFont" &gt;
       &lt;i class="fa-solid fa-ellipsis-vertical"&gt;&lt;/i&gt;
       &lt;i class="fa-solid fa-trash-can remover"&lt;/i&gt;
     &lt;/div&gt;`;
-<span class="cstat-no" title="statement not covered" >    booksList.appendChild(newBook);</span>
+    booksList.appendChild(newBook);
   }
 &nbsp;
-  static deleteTask = <span class="fstat-no" title="function not covered" >(i</span>e) =&gt; {
-    const check = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.newBook');</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; check.length; i += 1) {</span>
+  static deleteTask = (ie) =&gt; {
+    const check = document.querySelectorAll('.newBook');
+    for (let i = 0; i &lt; check.length; i += 1) {
       // eslint-disable-next-line eqeqeq
-<span class="cstat-no" title="statement not covered" >      if (check[i].firstChild.id == ie) {</span>
-<span class="cstat-no" title="statement not covered" >        check[i].remove();</span>
+      if (check[i].firstChild.id == ie) {
+        check[i].remove();
       }
     }
-<span class="cstat-no" title="statement not covered" >    if (check.length &gt; 0) {</span>
-      let indexer = <span class="cstat-no" title="statement not covered" >1;</span>
-<span class="cstat-no" title="statement not covered" >      Array.from(check).forEach(<span class="fstat-no" title="function not covered" >(e</span>lem) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        elem.firstChild.id = indexer;</span>
-<span class="cstat-no" title="statement not covered" >        indexer += 1;</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (check.length &gt; 0) {
+      let indexer = 1;
+      Array.from(check).forEach((elem) =&gt; {
+        elem.firstChild.id = indexer;
+        indexer += 1;
       });
     }
   }
@@ -325,7 +325,7 @@ export default class UI {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-05T07:47:16.738Z
+                at 2023-04-05T08:10:33.719Z
             </div>
         <script src="prettify.js"></script>
         <script>

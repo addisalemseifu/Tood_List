@@ -35,32 +35,32 @@ describe('Add and Remove from local storage', () => {
   });
 });
 
-describe("Add and Remove from the UI", () => {
-  it("should add newTask to list", () => {
+describe('Add and Remove from the UI', () => {
+  it('should add newTask to list', () => {
     const myTask = {
-      task: "",
+      task: '',
       completed: false,
       index: 0,
     };
-    const newBook = document.getElementsByClassName("newBook");
+    const newBook = document.getElementsByClassName('newBook');
 
-    myTask.task = "Task1";
+    myTask.task = 'Task1';
     myTask.index = 1;
     UI.addTaskToList(myTask);
     expect(newBook.length).toBe(1);
-    myTask.task = "Task2";
+    myTask.task = 'Task2';
     myTask.index = 2;
     UI.addTaskToList(myTask);
     expect(newBook.length).toBe(2);
-    myTask.task = "Task3";
+    myTask.task = 'Task3';
     myTask.index = 3;
     UI.addTaskToList(myTask);
 
     expect(newBook.length).toBe(3);
   });
 
-  it("should remove newTask from list", () => {
-    const newBook = document.getElementsByClassName("newBook");
+  it('should remove newTask from list', () => {
+    const newBook = document.getElementsByClassName('newBook');
 
     UI.deleteTask(2);
     UI.deleteTask(1);
