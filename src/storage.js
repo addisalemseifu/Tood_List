@@ -1,14 +1,14 @@
 /* eslint-disable max-len */
 export default class Store {
-  static getTask = () => {
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-    return tasks;
-  }
+ static getTask = () => {
+   let tasks;
+   if (localStorage.getItem('tasks') === null) {
+     tasks = [];
+   } else {
+     tasks = JSON.parse(localStorage.getItem('tasks'));
+   }
+   return tasks;
+ }
 
   static addTask = (task) => {
     const tasks = Store.getTask();
@@ -17,21 +17,19 @@ export default class Store {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
-  static removeTask = (target) => {
-    if (target.classList.contains('remover')) {
-      const tasks = Store.getTask();
-      // eslint-disable-next-line eqeqeq
-      const taskItem = tasks.find((item) => item.index == target.parentElement.parentElement.firstChild.id);
-      tasks.splice(tasks.indexOf(taskItem), 1);
-      if (tasks.length > 0) {
-        let indexer = 1;
-        tasks.forEach((elem) => {
-          elem.index = indexer;
-          indexer += 1;
-        });
-      }
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+  static removeTask = (id) => {
+    const tasks = Store.getTask();
+    // eslint-disable-next-line eqeqeq
+    const taskItem = tasks.find((item) => item.index == id);
+    tasks.splice(tasks.indexOf(taskItem), 1);
+    if (tasks.length > 0) {
+      let indexer = 1;
+      tasks.forEach((elem) => {
+        elem.index = indexer;
+        indexer += 1;
+      });
     }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   static update = (target) => {
@@ -49,18 +47,20 @@ export default class Store {
     });
   }
 
-  static markDone = (target) => {
+  static markDone = (id, target) => {
     const tasks = Store.getTask();
+    // eslint-disable-next-line arrow-body-style
+    const matching = tasks.find((task) => {
+      // eslint-disable-next-line eqeqeq
+      return task.index == id;
+    });
+    const indexOfMatch = tasks.indexOf(matching);
     if (target.checked === true) {
-      // eslint-disable-next-line arrow-body-style
-      const matching = tasks.find((task) => {
-        // eslint-disable-next-line eqeqeq
-        return task.index == target.parentElement.firstChild.id;
-      });
-      const indexOfMatch = tasks.indexOf(matching);
       tasks[indexOfMatch].completed = true;
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+    } else if (target.checked === false) {
+      tasks[indexOfMatch].completed = false;
     }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   static removeDone() {

@@ -1,6 +1,6 @@
 # Tood_List
  
-<a name="readme-top">Addisalem Seifu</a>
+<a name="readme-top">Addisalem Seifu and Amarachi Dimkpa</a>
 
 <div align="center">
 
@@ -46,6 +46,7 @@ This is the secound part of Todo Lis project configured with modules and all Es6
 ### Tech Stack <a name="tech-stack"></a>
 
 > HTML&CSS&JS&Webpack Modules(Luxon)
+> jest(for testing)
 
 
 ## 🚀 Live Demo <a name="live-demo">https://addisalemseifu.github.io/Tood_List/</a>
@@ -86,6 +87,7 @@ To run the project, execute the following command:
 ```sh
   Open dist/index.html in browser.
   or npm run start.
+  and npm test.
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -100,6 +102,11 @@ To run the project, execute the following command:
 - Twitter: [@Addisalem Seifu](https://twitter.com/twitterhandle)
 - LinkedIn: [addisalem seifu](https://linkedin.com/in/linkedinhandle)
 
+👤 **Amarachi Dimkpa**
+
+- GitHub: [@amazinggacee](https://github.com/Amazinggracee)
+- Twitter: [@amazinggaceu](https://twitter.com/amazinggraceu)
+- LinkedIn: [Amarachi Dimkpa](https://linkedin.com/in/amarachi-dimkpa-070643183)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
