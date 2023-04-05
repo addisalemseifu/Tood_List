@@ -1,6 +1,6 @@
 # Tood_List
  
-<a name="readme-top">Addisalem Seifu and Amarachi</a>
+<a name="readme-top">Addisalem Seifu and Amarachi Dimkpa</a>
 
 <div align="center">
 
@@ -102,11 +102,11 @@ To run the project, execute the following command:
 - Twitter: [@Addisalem Seifu](https://twitter.com/twitterhandle)
 - LinkedIn: [addisalem seifu](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
+👤 **Amarachi Dimkpa**
 
-- GitHub: [@addisalemseifu](https://github.com/githubhandle)
-- Twitter: [@Addisalem Seifu](https://twitter.com/twitterhandle)
-- LinkedIn: [addisalem seifu](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@amazinggacee](https://github.com/Amazinggracee)
+- Twitter: [@amazinggaceu](https://twitter.com/amazinggraceu)
+- LinkedIn: [Amarachi Dimkpa](https://linkedin.com/in/amarachi-dimkpa-070643183)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
