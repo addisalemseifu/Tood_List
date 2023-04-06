@@ -25,7 +25,7 @@ export default class UI {
   static deleteTask = (ie) => {
     const check = document.querySelectorAll('.newBook');
     for (let i = 0; i < check.length; i += 1) {
-      if (check[i].firstChild.id === ie) {
+      if (Number(check[i].firstChild.id) === Number(ie)) {
         check[i].remove();
       }
     }
@@ -75,7 +75,7 @@ export default class UI {
   static clearDone = () => {
     const checked = document.getElementsByClassName('check');
     Array.from(checked).forEach((box) => {
-      if (box.checked === 1) {
+      if (box.checked === true) {
         box.parentElement.remove();
       }
     });
