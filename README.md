@@ -51,8 +51,6 @@ This is the secound part of Todo Lis project configured with modules and all Es6
 
 ## 🚀 Live Demo <a name="live-demo">https://addisalemseifu.github.io/Tood_List/</a>
 
-- [Live Demo Link]()
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
