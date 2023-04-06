@@ -35,12 +35,38 @@ document.querySelector('.addBook').addEventListener('click', (e) => {
 document.querySelector('.books-list').addEventListener('click', (e) => {
   // Eddit task.
   if (e.target.classList.contains('tasks')) {
-    Store.update(e.target);
+    const ide = e.target.parentElement.firstChild.id;
+    e.target.removeAttribute('readonly');
+    e.target.addEventListener('input', () => {
+      const tasks = Store.getTask();
+      // eslint-disable-next-line arrow-body-style
+      const matching = tasks.find((task) => {
+        // eslint-disable-next-line eqeqeq
+        return task.index == ide;
+      });
+      const indexOfMatch = tasks.indexOf(matching);
+      const inpuValue = e.target.value;
+      Store.update(indexOfMatch, inpuValue);
+    });
   }
   // Check task done.
   if (e.target.classList.contains('check')) {
     const ide = e.target.parentElement.firstChild.id;
-    Store.markDone(ide, e.target);
+
+    const tasks = Store.getTask();
+    // eslint-disable-next-line arrow-body-style
+    const matching = tasks.find((task) => {
+      // eslint-disable-next-line eqeqeq
+      return task.index == ide;
+    });
+    const indexOfMatch = tasks.indexOf(matching);
+    let status = false;
+    if (e.target.checked === true) {
+      status = true;
+    } else if (e.target.checked === false) {
+      status = false;
+    }
+    Store.markDone(indexOfMatch, status);
   }
   // Remove Task from UI
   if (e.target.classList.contains('remover')) {
