@@ -85,7 +85,6 @@ describe('Eddit task changes in UI', () => {
   it('should remove completed tasks from UI', () => {
     const newBook = document.getElementsByClassName('newBook');
     const checked = document.getElementsByClassName('check');
-    console.log(newBook.length)
     checked[1].checked = 1;
 
     UI.clearDone();
