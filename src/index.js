@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import _, { concat } from 'lodash';
 import './index.css';
 import UI from './ui.js';
 import Todolist from './task.js';
@@ -35,12 +33,30 @@ document.querySelector('.addBook').addEventListener('click', (e) => {
 document.querySelector('.books-list').addEventListener('click', (e) => {
   // Eddit task.
   if (e.target.classList.contains('tasks')) {
-    Store.update(e.target);
+    const ide = e.target.parentElement.firstChild.id;
+    e.target.removeAttribute('readonly');
+    e.target.addEventListener('input', () => {
+      const tasks = Store.getTask();
+      const matching = tasks.find((task) => task.index === Number(ide));
+      const indexOfMatch = tasks.indexOf(matching);
+      const inpuValue = e.target.value;
+      Store.update(indexOfMatch, inpuValue);
+    });
   }
   // Check task done.
   if (e.target.classList.contains('check')) {
     const ide = e.target.parentElement.firstChild.id;
-    Store.markDone(ide, e.target);
+
+    const tasks = Store.getTask();
+    const matching = tasks.find((task) => task.index === Number(ide));
+    const indexOfMatch = tasks.indexOf(matching);
+    let status = false;
+    if (e.target.checked === true) {
+      status = true;
+    } else if (e.target.checked === false) {
+      status = false;
+    }
+    Store.markDone(indexOfMatch, status);
   }
   // Remove Task from UI
   if (e.target.classList.contains('remover')) {
