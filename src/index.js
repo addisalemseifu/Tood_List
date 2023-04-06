@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import _, { concat } from 'lodash';
 import './index.css';
 import UI from './ui.js';
 import Todolist from './task.js';
@@ -39,11 +37,7 @@ document.querySelector('.books-list').addEventListener('click', (e) => {
     e.target.removeAttribute('readonly');
     e.target.addEventListener('input', () => {
       const tasks = Store.getTask();
-      // eslint-disable-next-line arrow-body-style
-      const matching = tasks.find((task) => {
-        // eslint-disable-next-line eqeqeq
-        return task.index == ide;
-      });
+      const matching = tasks.find((task) => task.index === Number(ide));
       const indexOfMatch = tasks.indexOf(matching);
       const inpuValue = e.target.value;
       Store.update(indexOfMatch, inpuValue);
@@ -54,11 +48,7 @@ document.querySelector('.books-list').addEventListener('click', (e) => {
     const ide = e.target.parentElement.firstChild.id;
 
     const tasks = Store.getTask();
-    // eslint-disable-next-line arrow-body-style
-    const matching = tasks.find((task) => {
-      // eslint-disable-next-line eqeqeq
-      return task.index == ide;
-    });
+    const matching = tasks.find((task) => task.index === Number(ide));
     const indexOfMatch = tasks.indexOf(matching);
     let status = false;
     if (e.target.checked === true) {

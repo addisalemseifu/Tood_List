@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 export default class Store {
  static getTask = () => {
    let tasks;
@@ -19,8 +18,8 @@ export default class Store {
 
   static removeTask = (id) => {
     const tasks = Store.getTask();
-    // eslint-disable-next-line eqeqeq
-    const taskItem = tasks.find((item) => item.index == id);
+
+    const taskItem = tasks.find((item) => item.index === Number(id));
     tasks.splice(tasks.indexOf(taskItem), 1);
     if (tasks.length > 0) {
       let indexer = 1;
@@ -46,10 +45,7 @@ export default class Store {
 
   static removeDone() {
     let tasks = Store.getTask();
-    // eslint-disable-next-line arrow-body-style
-    const tasksUfinished = tasks.filter((item) => {
-      return item.completed === false;
-    });
+    const tasksUfinished = tasks.filter((item) => item.completed === false);
     tasks = tasksUfinished;
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }

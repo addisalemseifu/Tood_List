@@ -25,8 +25,7 @@ export default class UI {
   static deleteTask = (ie) => {
     const check = document.querySelectorAll('.newBook');
     for (let i = 0; i < check.length; i += 1) {
-      // eslint-disable-next-line eqeqeq
-      if (check[i].firstChild.id == ie) {
+      if (check[i].firstChild.id === ie) {
         check[i].remove();
       }
     }
@@ -41,8 +40,7 @@ export default class UI {
 
   static editable = (target) => {
     const tasks = document.getElementsByClassName('newBook');
-    // eslint-disable-next-line camelcase
-    const drop_down = document.getElementsByClassName('fa-ellipsis-vertical');
+    const dropDown = document.getElementsByClassName('fa-ellipsis-vertical');
     const trash = document.getElementsByClassName('fa-trash-can');
     Array.from(tasks).forEach((tas) => {
       if (tas.classList.contains('book_active')) {
@@ -60,7 +58,7 @@ export default class UI {
     if (target.classList.contains('newBook')) {
       target.lastElementChild.lastElementChild.classList.add('trash_active');
     }
-    Array.from(drop_down).forEach((dr) => {
+    Array.from(dropDown).forEach((dr) => {
       if (dr.classList.contains('drop_deactive')) {
         dr.classList.remove('drop_deactive');
       }
@@ -77,8 +75,7 @@ export default class UI {
   static clearDone = () => {
     const checked = document.getElementsByClassName('check');
     Array.from(checked).forEach((box) => {
-      // eslint-disable-next-line eqeqeq
-      if (box.checked == 1) {
+      if (box.checked === 1) {
         box.parentElement.remove();
       }
     });
