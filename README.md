@@ -49,9 +49,7 @@ This is the secound part of Todo Lis project configured with modules and all Es6
 > jest(for testing)
 
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [https://addisalemseifu.github.io/Tood_List/]()
+## 🚀 Live Demo <a name="live-demo">https://addisalemseifu.github.io/Tood_List/</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
